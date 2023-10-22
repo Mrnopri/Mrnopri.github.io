@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styletable.css">
+    <title>Table</title>
+</head>
+<body>
+
+    <header class="header">
+        <img src="./assets/LogoHoyo.jpg" alt="LogoHoyo" width="300px" >
+        <h1>GENSHIN CHALLENGER STICKER CONTEST</h1>
+    </header>
+
+    <main>
+        <section id="content">
+            <h2>Daftar Mahasiswa yang mengikuti GENSHIN CHALLENGER STICKER CONTEST</h2>
+            <table id="studentTable">
+                <tr>
+                    <th>Nama</th>
+                    <th>NIM</th>
+                    <th>Program Studi</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Alamat</th>
+                </tr>
+
+                <tr>
+                    <td>Rian</td>
+                    <td>121140222</td>
+                    <td>Teknik Informatika</td>
+                    <td>rian.121140132@yahoo.com</td>
+                    <td>rian554</td>
+                    <td>Laki-laki</td>
+                    <td>2003-12-24</td>
+                    <td>Lampung</td>
+                </tr>
+
+                <tr>
+                    <td>Rian</td>
+                    <td>121140222</td>
+                    <td>Teknik Informatika</td>
+                    <td>rian.121140132@yahoo.com</td>
+                    <td>rian554</td>
+                    <td>Laki-laki</td>
+                    <td>2003-12-21</td>
+                    <td>Lampung</td>
+                </tr>
+
+                <tr>
+                    <td>ant</td>
+                    <td>121140322</td>
+                    <td>Teknik Informatika</td>
+                    <td>ant.121140332@yahoo.com</td>
+                    <td>rbbaw</td>
+                    <td>Perempuan</td>
+                    <td>2003-12-13</td>
+                    <td>Lampung</td>
+                </tr>
+
+                <tr>
+                    <td>Rie</td>
+                    <td>121140223</td>
+                    <td>Teknik Informatika</td>
+                    <td>rie.121140223@yahoo.com</td>
+                    <td>rvavw</td>
+                    <td>Perempuan</td>
+                    <td>2003-12-09</td>
+                    <td>Lampung</td>
+                </tr>
+
+                <tr>
+                    <td>andri</td>
+                    <td>121140224</td>
+                    <td>Teknik Informatika</td>
+                    <td>andri.121140224@yahoo.com</td>
+                    <td>dawdv</td>
+                    <td>Laki-laki</td>
+                    <td>2003-12-22</td>
+                    <td>Lampung</td>
+                </tr>
+
+                <tr>
+                    <td>ian</td>
+                    <td>121140233</td>
+                    <td>Teknik Informatika</td>
+                    <td>rian.121140233@yahoo.com</td>
+                    <td>dwadav</td>
+                    <td>Laki-laki</td>
+                    <td>2003-12-19</td>
+                    <td>Lampung</td>
+                </tr>
+
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Hak Cipta 2023</p>
+    </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const studentTable = document.getElementById("studentTable");
+
+        // Mengambil query string dari URL
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+
+        // Memeriksa apakah ada data yang dikirimkan dari halaman formulir
+        if (urlParams.has("nama") && urlParams.has("nim") && urlParams.has("prodi") && urlParams.has("email") &&
+            urlParams.has("password") && urlParams.has("jenisKelamin") && urlParams.has("tanggalLahir") && urlParams.has("alamat")) {
+            // Mendapatkan nilai dari query string
+            const nama = urlParams.get("nama");
+            const nim = urlParams.get("nim");
+            const prodi = urlParams.get("prodi");
+            const email = urlParams.get("email");
+            const password = urlParams.get("password");
+            const jenisKelamin = urlParams.get("jenisKelamin");
+            const tanggalLahir = urlParams.get("tanggalLahir");
+            const alamat = urlParams.get("alamat");
+
+            // Membuat baris baru di tabel
+            const newRow = studentTable.insertRow(-1); // Menambahkan di akhir tabel
+
+            // Menambahkan sel-sel ke baris baru
+            const cellNama = newRow.insertCell(0);
+            const cellNIM = newRow.insertCell(1);
+            const cellProdi = newRow.insertCell(2);
+            const cellEmail = newRow.insertCell(3);
+            const cellPassword = newRow.insertCell(4);
+            const cellJenisKelamin = newRow.insertCell(5);
+            const cellTanggalLahir = newRow.insertCell(6);
+            const cellAlamat = newRow.insertCell(7);
+
+            // Menambahkan nilai ke sel-sel
+            cellNama.innerHTML = nama;
+            cellNIM.innerHTML = nim;
+            cellProdi.innerHTML = prodi;
+            cellEmail.innerHTML = email;
+            cellPassword.innerHTML = password;
+            cellJenisKelamin.innerHTML = jenisKelamin;
+            cellTanggalLahir.innerHTML = tanggalLahir;
+            cellAlamat.innerHTML = alamat;
+        }
+    });
+    </script>
+</body>
+</html>
